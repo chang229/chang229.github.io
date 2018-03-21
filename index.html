@@ -1,118 +1,265 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Hexo</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <meta name="generator" content="Hexo">
-
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="常红达的个人博客">
+  <meta name="keywords" content="">
   
+    <link rel="icon" href="http://img2.ph.126.net/T5EUfn4iMZCILs9MDPuSvA==/6597839424798151772.png">
   
-  
-
-  
+    
+  <title>常红达的博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<!--
-<body class="home-template">
--->
-<body class="home-template">
-<div id="perspective" class="perspective effect-movedown">
-  <div class="container">
-    <!-- wrapper -->
-    <div class="wrapper">
-
-      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
-    <div class="vertical">
-        <div class="site-head-content inner">
-             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
-            <h1 class="blog-title">Hexo</h1>
-            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
-        </div>
-    </div>
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>常红达的博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link active">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+    </ul>
+  </div>
 </header>
 
-      
-<main class="content" role="main">
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-03-20T09:36:44.077Z" itemprop="datePublished">
-          2018-03-20
-      </time>
+  <main id='index'>
+  <div class="posts-list">
     
-</span>
-      <h2 class="post-title"><a href="/2018/03/20/hello-world/">Hello World</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-      
-      </p>
-      
-      <p>
-          <a href="/2018/03/20/hello-world/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <nav class="pagination" role="pagination">
+      <section>
+        <a href="/2018/03/21/Vue项目开发过程中遇到的一些问题总结/">
+          <h3 class='post-head'>
+            Vue项目开发过程中遇到的一些问题总结
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h4 id="一、使用vue-cli搭建项目"><a href="#一、使用vue-cli搭建项目" class="headerlink" title="一、使用vue-cli搭建项目"></a>一、使用vue-cli搭建项目</h4><p>1.安装vue-cli:安装好node，直接全局安装vue-cli:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g vue-cli</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年03月21日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#vue" class='tag'>vue</a>
+
+
+          
+        </div>
+      </section>
     
-    <span class="page-number">Page 1 of 1</span>
+      <section>
+        <a href="/2018/02/28/js常见问题总结归纳/">
+          <h3 class='post-head'>
+            js常见问题总结归纳
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h4 id="一、使用-typeof-bar-“object”-来确定-bar-是否是对象的潜在陷阱是什么？如何避免这个陷阱？"><a href="#一、使用-typeof-bar-“object”-来确定-bar-是否是对象的潜在陷阱是什么？如何避免这个陷阱？" class="headerlink" title="一、使用 typeof bar === “object” 来确定 bar 是否是对象的潜在陷阱是什么？如何避免这个陷阱？"></a>一、使用 typeof bar === “object” 来确定 bar 是否是对象的潜在陷阱是什么？如何避免这个陷阱？</h4><blockquote>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年02月28日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#js" class='tag'>js</a>
+
+
+          
+        </div>
+      </section>
     
-  </nav>
+      <section>
+        <a href="/2018/02/02/JS中判断对象是不是数组的方法/">
+          <h3 class='post-head'>
+            JS中判断对象是不是数组的方法
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>今天有同事突然问到如何判断一个对象是不是数组，当时只想到啦<code>instanceof</code>操作符，后来又搜集了一些文章，总结出以下方法。</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年02月02日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#js" class='tag'>js</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2018/01/21/2018年你应该了解的前端新技术/">
+          <h3 class='post-head'>
+            2018年你应该了解的前端新技术
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h4 id="一、HTML5-2新标签dialog"><a href="#一、HTML5-2新标签dialog" class="headerlink" title="一、HTML5.2新标签dialog"></a>一、HTML5.2新标签dialog</h4><p>HTMl5.2新的版本出现了一个有意思的标签，那就是对话窗或窗口，也就是<code>dialog</code>,其基本用法如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dialog open&gt;</span><br><span class="line">    //soming...</span><br><span class="line">&lt;/dialog&gt;</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年01月21日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#js" class='tag'>js</a>
+
+
+          
+        </div>
+      </section>
+    
+  </div>
+  <aside>
+    
+    <div class="search">
+      <div class="content">
+        <form action="//www.google.com/search" target="_blank" class="search-form">
+          <input type="text" name="q" maxlength="20" placeholder="搜索">
+          <input type="hidden" name='sitesearch' value="chang229.github.io">
+        </form>
+      </div>
+    </div>
+    
+    
+      <div class="avatar">
+        <img src="http://img0.ph.126.net/Te-ucuczVjxDg9X_jf0ufA==/2176364520026985267.jpg" alt="avatar">
+          
+            <div class="content">
+                <span>常红达</span>
+            </div>
+          
+      </div>
+    
+    
+      <div class="categories">
+        <h1>
+          文章分类
+        </h1>
+        <div class="content">
+          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li></ul>
+        </div>
+      </div>
+    
+    
+  </aside>
 </main>
 
 
-      
-<footer class="site-footer">
-  
-  <div class="inner">
-     <section class="copyright">All content copyright <a href="/">Hexo</a> &copy; 2014 &bull; All rights reserved.</section>
-     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
   </div>
 </footer>
 
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
-<script type="text/javascript" src="/js/menu.js"></script>
 
 
-
-
-
-  </div>
-</div>
-
-<nav  class="outer-nav top horizontal">
-
-          <a class="icon-home"  href="/"><span>Home</span></a>
-
-          <a class="icon-news"  href="/archive"><span>Archive</span></a>
-
-          <a class="icon-image"  href="/images"><span>Images</span></a>
-
-          <a class="icon-wiki"  href="/wiki/2014-10-28-wiki/"><span>Wiki</span></a>
-
-          <a class="icon-Favorites"  href="/favorites"><span>Favorites</span></a>
-
-          <a class="icon-mail"  href="/about/2014-09-11-mabao/"><span>Contact</span></a>
-
-</nav>
-
-</div>
 </body>
 </html>

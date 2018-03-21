@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="常红达的个人博客">
+  <meta name="keywords" content="">
+  
+    <link rel="icon" href="http://img2.ph.126.net/T5EUfn4iMZCILs9MDPuSvA==/6597839424798151772.png">
+  
+    
+  <title>Vue项目开发过程中遇到的一些问题总结 | 常红达的博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>常红达的博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Vue项目开发过程中遇到的一些问题总结</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年03月21日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#vue" class='tag'>vue</a>
+
+
+            
+          </div>
+          <h4 id="一、使用vue-cli搭建项目"><a href="#一、使用vue-cli搭建项目" class="headerlink" title="一、使用vue-cli搭建项目"></a>一、使用vue-cli搭建项目</h4><p>1.安装vue-cli:安装好node，直接全局安装vue-cli:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g vue-cli</span><br></pre></td></tr></table></figure></p>
+<p>安装完成后，使用<code>vue-V</code>查看是否安装成功<br><img src="https://images2015.cnblogs.com/blog/1059788/201701/1059788-20170106125052316-34797974.png" alt="查看vue版本号"><br>如果提示“无法识别 ‘vue’ ” ，有可能是 npm 版本过低，可以使用 npm install -g npm 来更新版本。<br>2.生成项目：首先进入到项目目录中，执行命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vue init webpack Vue-Project</span><br><span class="line">//其中webpack是模板名称，Vue-Project是自定义的项目名称</span><br></pre></td></tr></table></figure></p>
+<p>命令执行之后，会在当前目录生成一个以该名称命名的文件夹：<br><img src="https://images2015.cnblogs.com/blog/1059788/201701/1059788-20170106133950378-145408144.png" alt="vue-cli创建项目"><br>配置完成之后，通过命令：<code>cd Vue-Project</code>进入项目目录，使用npm安装相关依赖<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>启动项目：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
+<p>如果浏览器打开之后，没有加载出页面，有可能是本地的 8080 端口被占用，需要修改一下配置文件 config&gt;index.js<br><img src="https://images2015.cnblogs.com/blog/1059788/201701/1059788-20170106135204409-1735535107.png" alt="vue配置文件修改"><br>修改完成之后，项目就算已经搭建成功，可以开始编写自己的代码啦。</p>
+<h4 id="二、vue-js程序启动运行时，遇到Unexpected-tab-character问题"><a href="#二、vue-js程序启动运行时，遇到Unexpected-tab-character问题" class="headerlink" title="二、vue.js程序启动运行时，遇到Unexpected tab character问题"></a>二、vue.js程序启动运行时，遇到Unexpected tab character问题</h4><p>在vuejs程序启动时，会遇到一种常见问题，在终端报错：Unexpected tab character。如下图：<br><img src="http://img.blog.csdn.net/20170614091540917?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHZrZWxseQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="vue项目启动报错"><br>解决方法：<br>在eslint的配置文件中（.eslintrc）rules项中添加一行：”no-tabs”:”off”，如下图：<br><img src="http://img.blog.csdn.net/20170614092226463?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHZrZWxseQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="vue报错解决方法"></p>
+<h4 id="三、v-for-列表数据渲染完后如何重新渲染"><a href="#三、v-for-列表数据渲染完后如何重新渲染" class="headerlink" title="三、v-for 列表数据渲染完后如何重新渲染"></a>三、v-for 列表数据渲染完后如何重新渲染</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;select class=&quot;dept_select select-change&quot; data-placeholder=&quot;请选择&quot; style=&quot;width: 180px;&quot; name=&quot;academys&quot; id=&quot;academys&quot; data-rule-required=&quot;true&quot; v-model=&quot;Academyselect&quot;&gt;</span><br><span class="line">        &lt;option v-for=&quot;item in academyList&quot; v-bind:value=&quot;item.id&quot;&gt;</span><br><span class="line">            &#123;&#123; item.academyName &#125;&#125;</span><br><span class="line">        &lt;/option&gt;</span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p> 当option列表渲染完成之后，如果数据改变需要重新渲染列表，解决方案为：</p>
+<blockquote>
+<p>把academyList替换为新数组。官网文档以下两种数据变化vue无法检测:1.通过索引修改值;2.改变数组长度。赋值新数组不属于以上两种，有数据改变，就会有更新，记得在对应vue实例中定义academyList:[]这个数组，然后方法中赋值this.academyList就可以。</p>
+</blockquote>
+<h4 id="四、vue中src实现数据绑定遇到的问题"><a href="#四、vue中src实现数据绑定遇到的问题" class="headerlink" title="四、vue中src实现数据绑定遇到的问题"></a>四、vue中src实现数据绑定遇到的问题</h4><p> 在vue2中，src实现数据绑定稍不留神就不成功。假定value.src是绑定的数据。<br>常见错误写法1：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src=&quot;value.src&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>错误之处在于：<br>1.属性值数据绑定应该用v-bind，应该写成v-bind:src=””<br>2.直接用引号”value.src”会报错，取不到值。<br>常见错误写法2：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src=&quot;&#123;&#123;value.src&#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>常见错误写法3：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src=&quot;&#123;value.src&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>以上均会报错。正确写法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img :src=&quot;value.src&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="五、vue页面中的定时器或者滚动事件报错"><a href="#五、vue页面中的定时器或者滚动事件报错" class="headerlink" title="五、vue页面中的定时器或者滚动事件报错"></a>五、vue页面中的定时器或者滚动事件报错</h4><p>当vue项目中的组件被移除后，组件中的定时器和页面滚动事件并不会跟随组件一起移除掉，因此会导致出现一些错误，或影响其它组件的正常运行。<br>因此离开该页面需要移除这个监听的事件,<code>destroyed</code>在组件移除后执行。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">destroyed () &#123;</span><br><span class="line">  window.removeEventListener(&apos;scroll&apos;, this.handleScroll)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="六、vue中使用定时器时this指向问题"><a href="#六、vue中使用定时器时this指向问题" class="headerlink" title="六、vue中使用定时器时this指向问题"></a>六、vue中使用定时器时this指向问题</h4><blockquote>
+<p>箭头函数中的this指向是固定不变（定义函数时的指向），在vue中指向vue;<br>普通函数中的this指向是变化的（使用函数时的指向），谁调用的指向谁。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">created () &#123;</span><br><span class="line">    setInterval(() =&gt; &#123; console.log(this) &#125;, 1000) // 箭头函数中this指向vue</span><br><span class="line"></span><br><span class="line">    setInteval(function () &#123; console.log(this) &#125;, 1000) // 普通函数中this指向window,因为setInterval()函数是window对象的函数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在vue的定时器函数中如果要使用普通函数，要使用了一个变量来当中间值：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ready: function()&#123;</span><br><span class="line">    let self = this;</span><br><span class="line">    setInvertal(function()&#123;</span><br><span class="line">        for(let k in self.goods_list)&#123;</span><br><span class="line">            .......</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, 1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="七、vue-router-页面切换后保持在页面顶部而不是保持原先的滚动位置的办法"><a href="#七、vue-router-页面切换后保持在页面顶部而不是保持原先的滚动位置的办法" class="headerlink" title="七、vue-router 页面切换后保持在页面顶部而不是保持原先的滚动位置的办法"></a>七、vue-router 页面切换后保持在页面顶部而不是保持原先的滚动位置的办法</h4><p>vue-router有提供一个方法scrollBehavior，它可以使切换到新路由时，想要页面滚到顶部，或者是保持原先的滚动位置，就像重新加载页面那样。<br>这个功能只在 HTML5 history 模式下可用。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  routes: [...],</span><br><span class="line">  scrollBehavior (to, from, savedPosition) &#123;</span><br><span class="line">    // return 期望滚动到哪个的位置</span><br><span class="line">    if (savedPosition) &#123;</span><br><span class="line">        return savedPosition</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return &#123; x: 0, y: 0 &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="八、vue关于父组件调用子组件的方法"><a href="#八、vue关于父组件调用子组件的方法" class="headerlink" title="八、vue关于父组件调用子组件的方法"></a>八、vue关于父组件调用子组件的方法</h4><blockquote>
+<p>父组件： 在子组件中加上ref即可通过this.$refs.ref.method调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div @click=&quot;parentMethod&quot;&gt;</span><br><span class="line">    &lt;children ref=&quot;c1&quot;&gt;&lt;/children&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import children from &apos;components/children/children.vue&apos;</span><br><span class="line">  export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">      &apos;children&apos;: children</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      parentMethod() &#123;</span><br><span class="line">        console.log(this.$refs.c1) //返回的是一个vue对象，所以可以直接调用其方法</span><br><span class="line">        this.$refs.c1.childMethod();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="九、关于Vue背景图打包之后访问路径错误问题"><a href="#九、关于Vue背景图打包之后访问路径错误问题" class="headerlink" title="九、关于Vue背景图打包之后访问路径错误问题"></a>九、关于Vue背景图打包之后访问路径错误问题</h4><p>通过vue-cli脚手架创建的vue项目，注意相对路径标识’./’,我们知道img为html标签，他的路径是由index.html开始访问的，他走./static/img/‘图片名’是能正确访问到图片的，所以img的路径没问题，然后app.css访问./static/img/‘图片名’是访问错误的，因为在css目录下并没有static目录。这样就造成了路径访问失败的问题。<br>解决办法：</p>
+<blockquote>
+<p>1.检查config文件中的assetsPublicPath是否设置为’/’而不是’./’ ,注意区分’/’为绝对路径，绝对路径从网站静态服务器根目录查询/static/img/图片，这样的路径就是正确的，如果设置为’./’，路径就变成了相对路径，相对路径会根据相对的文件目录来确定文件资源，会造成上面分析的问题<br>2.vue-cli创建的vue项目，会自带一个static目录，将出错图片放在该目录下面即可（正确解决办法） 查看vue-cli创建项目的webpack配置文件可以找到一个将static目录拷贝到dist目录中。根据对资源的规划不同，将需要打包的资源放在src/assets目录中，不需要打包的资源放入static目录中。</p>
+</blockquote>
+<h4 id="十、vue2绑定内联样式background的一些坑"><a href="#十、vue2绑定内联样式background的一些坑" class="headerlink" title="十、vue2绑定内联样式background的一些坑"></a>十、vue2绑定内联样式background的一些坑</h4><p>有一个需求是，给一个盒子添加一个背景图片，这个背景图片是动态请求回来的，那么应该怎么做？<br>正常情况下的vue内联样式如下写法：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div :style=&quot;&#123; color: activeColor, fontSize: fontSize + &apos;px&apos; &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">data: &#123;</span><br><span class="line">  activeColor: &apos;red&apos;,</span><br><span class="line">  fontSize: 30</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此时的style绑定的是一个JavaScript对象，在JavaScript中不允许出现 “-“ ，那么绑定一个背景图片应该这么写：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div :style=&quot;&#123;background: &apos;url(&apos;+ img +&apos;)&apos;，backgroundSize:cover &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">data:&#123;</span><br><span class="line">  img:&apos;xxx.png&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>将图片改为动态请求回来的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div :style=&quot;&#123;background: &apos;url(&apos;+ img +&apos;)&apos;，backgroundSize:cover &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">data:&#123;</span><br><span class="line">    img:&apos;xxx.png&apos;</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">// 伪代码 请求数据</span><br><span class="line">      getImg()&#123;</span><br><span class="line">        this.$http.get().then(function (e) &#123;</span><br><span class="line">          this.img = e.data //将数据赋值给img</span><br><span class="line">        &#125;.bind(this))</span><br><span class="line">      &#125;</span><br><span class="line">&#125;，</span><br><span class="line">created()&#123;</span><br><span class="line">// 调用函数</span><br><span class="line">    this.getImg()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为在生命周期 mounted 之前都是虚拟dom 也就是说 当页面已经渲染完，但是vue还没执行，所有数据丢失，此时我们加上<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div v-if=&apos;img &apos; :style=&quot;&#123;background: &apos;url(&apos;+ img +&apos;)&apos;，backgroundSize:cover &#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>表示有img属性的时候我们选择这个元素,至此就成功绑定背景图片了。</p>
+
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、使用vue-cli搭建项目"><span class="toc-number">1.</span> <span class="toc-text">一、使用vue-cli搭建项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、vue-js程序启动运行时，遇到Unexpected-tab-character问题"><span class="toc-number">2.</span> <span class="toc-text">二、vue.js程序启动运行时，遇到Unexpected tab character问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、v-for-列表数据渲染完后如何重新渲染"><span class="toc-number">3.</span> <span class="toc-text">三、v-for 列表数据渲染完后如何重新渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、vue中src实现数据绑定遇到的问题"><span class="toc-number">4.</span> <span class="toc-text">四、vue中src实现数据绑定遇到的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、vue页面中的定时器或者滚动事件报错"><span class="toc-number">5.</span> <span class="toc-text">五、vue页面中的定时器或者滚动事件报错</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、vue中使用定时器时this指向问题"><span class="toc-number">6.</span> <span class="toc-text">六、vue中使用定时器时this指向问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、vue-router-页面切换后保持在页面顶部而不是保持原先的滚动位置的办法"><span class="toc-number">7.</span> <span class="toc-text">七、vue-router 页面切换后保持在页面顶部而不是保持原先的滚动位置的办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、vue关于父组件调用子组件的方法"><span class="toc-number">8.</span> <span class="toc-text">八、vue关于父组件调用子组件的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、关于Vue背景图打包之后访问路径错误问题"><span class="toc-number">9.</span> <span class="toc-text">九、关于Vue背景图打包之后访问路径错误问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十、vue2绑定内联样式background的一些坑"><span class="toc-number">10.</span> <span class="toc-text">十、vue2绑定内联样式background的一些坑</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/lib/jquery.fancybox.min.js"></script>
+
+
+</body>
+</html>
